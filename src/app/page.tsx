@@ -1,37 +1,60 @@
-import Link from "next/link";
+import { Table as TableIcon } from "lucide-react";
+import { AmpsToWattsCalculator } from "~/components/amps-to-watts-calculator";
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "~/components/ui/table";
 
 export default function HomePage() {
+  const quickReference = [
+    { amps: 1, watts: 120 },
+    { amps: 5, watts: 600 },
+    { amps: 10, watts: 1200 },
+    { amps: 15, watts: 1800 },
+    { amps: 20, watts: 2400 },
+    { amps: 30, watts: 3600 },
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-        <h1 className="font-extrabold text-5xl text-white tracking-tight sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="font-bold text-2xl">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="font-bold text-2xl">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
-        </div>
-      </div>
+    <main className="max-w-5xl mx-auto py-12 px-4 space-y-12">
+      <AmpsToWattsCalculator />
+
+      <Card>
+        <CardHeader>
+          <div className="flex items-center gap-2">
+            <TableIcon className="size-5 text-primary" />
+            <CardTitle>Quick Reference (120V DC)</CardTitle>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Current (Amps)</TableHead>
+                <TableHead>Voltage (Volts)</TableHead>
+                <TableHead className="text-right">Power (Watts)</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {quickReference.map((item) => (
+                <TableRow key={item.amps}>
+                  <TableCell className="font-medium">{item.amps} A</TableCell>
+                  <TableCell>120 V</TableCell>
+                  <TableCell className="text-right">{item.watts} W</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+          <p className="text-[10px] text-center text-muted-foreground italic mt-4">
+            * Based on Watts = Amps × 120V
+          </p>
+        </CardContent>
+      </Card>
     </main>
   );
 }
