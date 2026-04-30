@@ -35,17 +35,17 @@ export function FixedLeftAd() {
           </style>
         </head>
         <body>
-          <div id="container-14742d37d934c24f066317392b6b759c"></div>
+          <div id="container-948df3c23bf94c760ff097e47b557c0e"></div>
           <script type="text/javascript">
             var atOptions = {
-              'key' : '14742d37d934c24f066317392b6b759c',
+              'key' : '948df3c23bf94c760ff097e47b557c0e',
               'format' : 'iframe',
               'height' : 600,
               'width' : 160,
               'params' : {}
             };
           </script>
-          <script type="text/javascript" src="https://gravelsemesterflourish.com/14742d37d934c24f066317392b6b759c/invoke.js"></script>
+          <script type="text/javascript" src="https://gravelsemesterflourish.com/948df3c23bf94c760ff097e47b557c0e/invoke.js"></script>
         </body>
       </html>
     `);

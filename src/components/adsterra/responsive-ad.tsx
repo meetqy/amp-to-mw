@@ -20,22 +20,21 @@ export function ResponsiveAd() {
     return <div className="min-h-[50px] md:min-h-[90px]" />;
 
   return (
-    <div className="flex justify-center pt-4">
-      {isMobile ? (
+    <div className="flex justify-center items-center pt-4">
+      {!isMobile && (
         <AdUnit
-          atKey="0519d0146ca279c20a5437cbec7af657"
-          format="iframe"
-          height={50}
-          width={320}
-        />
-      ) : (
-        <AdUnit
-          atKey="3924288ae40922a5d9f9c837f1afc21e"
+          atKey="6c0f2f33e90f8dfb16cf31f8f12adbb8"
           format="iframe"
           height={90}
           width={728}
         />
       )}
+      <AdUnit
+        atKey="951dd8f945b2fc5e30c057d43a54ffb6"
+        format="iframe"
+        height={50}
+        width={320}
+      />
     </div>
   );
 }

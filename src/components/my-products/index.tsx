@@ -1,4 +1,5 @@
-import "./index.css";
+import { Package } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 
 export default async function MyProducts() {
   let htmlContent = "";
@@ -15,8 +16,19 @@ export default async function MyProducts() {
   if (!htmlContent) return null;
 
   return (
-    <section className="site-links">
-      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-    </section>
+    <Card className="w-full max-w-3xl mx-auto border-dashed">
+      <CardHeader>
+        <div className="flex items-center gap-2">
+          <Package className="size-5 text-primary" />
+          <CardTitle className="text-lg">My Products</CardTitle>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div
+          className="text-sm text-muted-foreground space-y-4 [&_a]:text-primary [&_a]:underline [&_ul]:list-disc [&_ul]:pl-4 [&_li]:mt-1"
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
+      </CardContent>
+    </Card>
   );
 }

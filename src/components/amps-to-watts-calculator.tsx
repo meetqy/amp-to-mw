@@ -2,7 +2,12 @@
 
 import { Calculator, Info } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader } from "~/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+} from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 
@@ -27,7 +32,9 @@ interface AmpsToWattsCalculatorProps {
   defaultType?: CalculationType;
 }
 
-export function AmpsToWattsCalculator({ defaultType = "DC" }: AmpsToWattsCalculatorProps) {
+export function AmpsToWattsCalculator({
+  defaultType = "DC",
+}: AmpsToWattsCalculatorProps) {
   const [current, setCurrent] = useState<string>("1");
   const [voltage, setVoltage] = useState<string>("120");
   const [pf, setPf] = useState<string>("0.8");
@@ -67,9 +74,17 @@ export function AmpsToWattsCalculator({ defaultType = "DC" }: AmpsToWattsCalcula
       <CardHeader>
         <div className="flex items-center gap-3 mb-2">
           <Calculator className="size-6 text-primary" />
-          <h1 className="text-2xl font-bold tracking-tight">{TYPES.find((t) => t.value === type)?.label} Amps to Watts</h1>
+          <h1 className="text-2xl font-bold tracking-tight">
+            {TYPES.find((t) => t.value === type)?.label} Amps to Watts
+          </h1>
         </div>
-        <CardDescription>Convert {type.includes("AC") ? "alternating current (AC)" : "direct current (DC)"} amps to watts.</CardDescription>
+        <CardDescription>
+          Convert{" "}
+          {type.includes("AC")
+            ? "alternating current (AC)"
+            : "direct current (DC)"}{" "}
+          amps to watts.
+        </CardDescription>
       </CardHeader>
 
       <CardContent className="space-y-8">
@@ -78,17 +93,42 @@ export function AmpsToWattsCalculator({ defaultType = "DC" }: AmpsToWattsCalcula
           <div className="space-y-3">
             <Label htmlFor="current">Current (Amps)</Label>
             <div className="relative">
-              <Input className="pr-10" id="current" onChange={(e) => setCurrent(e.target.value)} placeholder="e.g. 10" type="number" value={current} />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-muted-foreground pointer-events-none">A</span>
+              <Input
+                className="pr-10"
+                id="current"
+                onChange={(e) => setCurrent(e.target.value)}
+                placeholder="e.g. 10"
+                type="number"
+                value={current}
+              />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-muted-foreground pointer-events-none">
+                A
+              </span>
             </div>
           </div>
 
           {/* Voltage Input */}
           <div className="space-y-3">
-            <Label htmlFor="voltage">Voltage (Volts {type === "AC_THREE_LL" ? "L-L" : type === "AC_THREE_LN" ? "L-N" : ""})</Label>
+            <Label htmlFor="voltage">
+              Voltage (Volts{" "}
+              {type === "AC_THREE_LL"
+                ? "L-L"
+                : type === "AC_THREE_LN"
+                  ? "L-N"
+                  : ""}
+              )
+            </Label>
             <div className="relative">
-              <Input className="pr-10" id="voltage" onChange={(e) => setVoltage(e.target.value)} type="number" value={voltage} />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-muted-foreground pointer-events-none">V</span>
+              <Input
+                className="pr-10"
+                id="voltage"
+                onChange={(e) => setVoltage(e.target.value)}
+                type="number"
+                value={voltage}
+              />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-muted-foreground pointer-events-none">
+                V
+              </span>
             </div>
           </div>
         </div>
@@ -98,13 +138,25 @@ export function AmpsToWattsCalculator({ defaultType = "DC" }: AmpsToWattsCalcula
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <Label htmlFor="pf">Power Factor (PF)</Label>
-              <span className="text-[10px] bg-muted px-2 py-0.5 rounded-full text-muted-foreground font-medium uppercase tracking-wider">0.0 to 1.0</span>
+              <span className="text-[10px] bg-muted px-2 py-0.5 rounded-full text-muted-foreground font-medium uppercase tracking-wider">
+                0.0 to 1.0
+              </span>
             </div>
-            <Input id="pf" max="1" min="0" onChange={(e) => setPf(e.target.value)} placeholder="e.g. 0.8" step="0.01" type="number" value={pf} />
+            <Input
+              id="pf"
+              max="1"
+              min="0"
+              onChange={(e) => setPf(e.target.value)}
+              placeholder="e.g. 0.8"
+              step="0.01"
+              type="number"
+              value={pf}
+            />
             <div className="flex items-start gap-2 p-3 bg-amber-50 dark:bg-amber-950/20 rounded-lg border border-amber-100 dark:border-amber-900/30">
               <Info className="size-4 text-amber-600 dark:text-amber-500 mt-0.5 shrink-0" />
               <p className="text-xs text-amber-800 dark:text-amber-400 leading-relaxed">
-                AC systems require a power factor. Resistive loads are usually 1.0, while inductive loads (like motors) are less than 1.0.
+                AC systems require a power factor. Resistive loads are usually
+                1.0, while inductive loads (like motors) are less than 1.0.
               </p>
             </div>
           </div>
@@ -113,17 +165,23 @@ export function AmpsToWattsCalculator({ defaultType = "DC" }: AmpsToWattsCalcula
         {/* Result Display */}
         <div className="relative overflow-hidden bg-primary rounded-2xl p-8 text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-[1.01]">
           <div className="relative z-10 flex flex-col items-center justify-center">
-            <p className="text-sm font-medium opacity-80 mb-2">Calculated Power Output</p>
+            <p className="text-sm font-medium opacity-80 mb-2">
+              Calculated Power Output
+            </p>
             <div className="flex items-baseline gap-2">
               <span className="text-5xl font-black tracking-tight">
                 {result.toLocaleString(undefined, {
                   maximumFractionDigits: 2,
                 })}
               </span>
-              <span className="text-2xl font-bold opacity-80 uppercase">Watts</span>
+              <span className="text-2xl font-bold opacity-80 uppercase">
+                Watts
+              </span>
             </div>
             <div className="mt-6 px-4 py-1.5 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
-              <code className="text-xs font-mono">Formula: {TYPES.find((t) => t.value === type)?.formula}</code>
+              <code className="text-xs font-mono">
+                Formula: {TYPES.find((t) => t.value === type)?.formula}
+              </code>
             </div>
           </div>
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 size-48 bg-white/5 rounded-full" />

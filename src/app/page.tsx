@@ -1,7 +1,7 @@
 import { AmpsToWattsCalculator } from "~/components/amps-to-watts-calculator";
 import { CalculatorLinks } from "~/components/calculator-links";
-import { QuickReferenceTable } from "~/components/quick-reference-table";
 import { FormulaExplanation } from "~/components/formula-explanation";
+import { QuickReferenceTable } from "~/components/quick-reference-table";
 
 export default function HomePage() {
   return (

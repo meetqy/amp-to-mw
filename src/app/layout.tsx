@@ -2,6 +2,9 @@ import "~/styles/globals.css";
 
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { FixedLeftAd } from "~/components/adsterra/fixed-left-ad";
+import { ResponsiveAd } from "~/components/adsterra/responsive-ad";
+import MyProducts from "~/components/my-products";
 
 export const metadata: Metadata = {
   title:
@@ -21,7 +24,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html className={`${geist.variable}`} lang="en">
-      <body>{children}</body>
+      <body>
+        <ResponsiveAd />
+        <FixedLeftAd />
+        {children}
+        <MyProducts />
+      </body>
     </html>
   );
 }
