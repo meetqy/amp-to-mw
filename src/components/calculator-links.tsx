@@ -7,6 +7,7 @@ import { cn } from "~/lib/utils";
 
 const NAV_ITEMS = [
   { label: "DC", path: "/" },
+  { label: "DC Amps", path: "/dc-amp-calculator" },
   { label: "AC 1φ", path: "/ac-single" },
   { label: "AC 3φ (L-L)", path: "/ac-three-ll" },
   { label: "AC 3φ (L-N)", path: "/ac-three-ln" },

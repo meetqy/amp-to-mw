@@ -3,7 +3,14 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://amptomw.com"; // 替换为实际域名
 
-  const routes = ["", "/ac-single", "/ac-three-ll", "/ac-three-ln", "/kv-to-mw"];
+  const routes = [
+    "",
+    "/dc-amp-calculator",
+    "/ac-single",
+    "/ac-three-ll",
+    "/ac-three-ln",
+    "/kv-to-mw",
+  ];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
