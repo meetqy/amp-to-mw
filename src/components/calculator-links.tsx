@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { label: "AC 1φ", path: "/ac-single" },
   { label: "AC 3φ (L-L)", path: "/ac-three-ll" },
   { label: "AC 3φ (L-N)", path: "/ac-three-ln" },
+  { label: "kV to MW", path: "/kv-to-mw" },
 ];
 
 export function CalculatorLinks() {
