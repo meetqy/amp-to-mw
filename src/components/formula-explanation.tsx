@@ -57,7 +57,9 @@ export function FormulaExplanation({ type }: FormulaExplanationProps) {
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="bg-muted/50 p-4 rounded-lg flex flex-col items-center gap-2">
-          <code className="text-xl font-bold text-primary">{content.formula}</code>
+          <code className="text-xl font-bold text-primary">
+            {content.formula}
+          </code>
           <div className="text-sm text-muted-foreground italic">
             To get Milliwatts (mW): P(mW) = P(W) × 1000
           </div>

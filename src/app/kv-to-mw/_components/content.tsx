@@ -1,3 +1,4 @@
+import { HelpCircle, Info, Lightbulb } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import {
   Table,
@@ -7,7 +8,6 @@ import {
   TableHeader,
   TableRow,
 } from "~/components/ui/table";
-import { HelpCircle, Info, Lightbulb } from "lucide-react";
 
 export function KvToMwContent() {
   const examples = [
@@ -80,7 +80,9 @@ export function KvToMwContent() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="bg-muted/50 p-4 rounded-lg flex flex-col items-center gap-2">
-            <code className="text-xl font-bold text-primary">P(MW) = √3 × V(kV) × I(A) × PF / 1000</code>
+            <code className="text-xl font-bold text-primary">
+              P(MW) = √3 × V(kV) × I(A) × PF / 1000
+            </code>
           </div>
           <div className="space-y-2 text-sm text-muted-foreground">
             <p>Where:</p>
@@ -98,7 +100,8 @@ export function KvToMwContent() {
                 <strong>PF:</strong> Power Factor (usually between 0.8 and 1.0)
               </li>
               <li>
-                <strong>√3:</strong> Square root of 3 (approx. 1.732) for 3-phase systems
+                <strong>√3:</strong> Square root of 3 (approx. 1.732) for
+                3-phase systems
               </li>
             </ul>
           </div>
@@ -115,10 +118,14 @@ export function KvToMwContent() {
           {faqs.map((faq, idx) => (
             <Card key={idx}>
               <CardHeader className="pb-2">
-                <CardTitle className="text-base font-semibold">{faq.q}</CardTitle>
+                <CardTitle className="text-base font-semibold">
+                  {faq.q}
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {faq.a}
+                </p>
               </CardContent>
             </Card>
           ))}

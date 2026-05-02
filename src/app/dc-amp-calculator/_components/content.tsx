@@ -1,6 +1,13 @@
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "~/components/ui/table";
 import { Info, Lightbulb } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "~/components/ui/table";
 
 export function DcAmpContent() {
   const examples = [
@@ -56,19 +63,29 @@ export function DcAmpContent() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="bg-muted/50 p-4 rounded-lg flex flex-col items-center gap-2">
-            <code className="text-xl font-bold text-primary">I(A) = P(W) / V(V)</code>
+            <code className="text-xl font-bold text-primary">
+              I(A) = P(W) / V(V)
+            </code>
           </div>
           <div className="space-y-2 text-sm text-muted-foreground leading-relaxed">
             <p>
-              To calculate DC amperes, you simply divide the power in watts by the voltage in volts.
+              To calculate DC amperes, you simply divide the power in watts by
+              the voltage in volts.
             </p>
             <ul className="list-disc pl-5 space-y-1">
-              <li><strong>I (A):</strong> Current in Amperes (Amps)</li>
-              <li><strong>P (W):</strong> Power in Watts</li>
-              <li><strong>V (V):</strong> Voltage in Volts</li>
+              <li>
+                <strong>I (A):</strong> Current in Amperes (Amps)
+              </li>
+              <li>
+                <strong>P (W):</strong> Power in Watts
+              </li>
+              <li>
+                <strong>V (V):</strong> Voltage in Volts
+              </li>
             </ul>
             <p className="mt-2 italic">
-              Example: A 120W device running on a 12V DC system draws 10A of current (120 / 12 = 10).
+              Example: A 120W device running on a 12V DC system draws 10A of
+              current (120 / 12 = 10).
             </p>
           </div>
         </CardContent>

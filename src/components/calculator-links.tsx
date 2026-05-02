@@ -18,7 +18,7 @@ export function CalculatorLinks() {
   const pathname = usePathname();
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-8">
+    <div className="w-full max-w-3xl mx-auto mb-8">
       <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4">
         {NAV_ITEMS.map((item) => {
           const isActive = pathname === item.path;

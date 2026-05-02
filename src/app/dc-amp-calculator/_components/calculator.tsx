@@ -2,7 +2,12 @@
 
 import { Calculator } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader } from "~/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+} from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 
@@ -25,10 +30,13 @@ export function DcAmpCalculator() {
       <CardHeader>
         <div className="flex items-center gap-3 mb-2">
           <Calculator className="size-6 text-primary" />
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">DC Amps Calculator</h1>
+          <h1 className="text-2xl font-bold tracking-tight text-foreground">
+            DC Amps Calculator
+          </h1>
         </div>
         <CardDescription>
-          Calculate Direct Current (DC) Amperes (A) from Power (Watts) and Voltage (Volts).
+          Calculate Direct Current (DC) Amperes (A) from Power (Watts) and
+          Voltage (Volts).
         </CardDescription>
       </CardHeader>
 
@@ -40,12 +48,14 @@ export function DcAmpCalculator() {
             <div className="relative">
               <Input
                 id="watts"
-                type="number"
-                value={watts}
                 onChange={(e) => setWatts(e.target.value)}
                 placeholder="e.g. 120"
+                type="number"
+                value={watts}
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-muted-foreground pointer-events-none">W</span>
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-muted-foreground pointer-events-none">
+                W
+              </span>
             </div>
           </div>
 
@@ -55,12 +65,14 @@ export function DcAmpCalculator() {
             <div className="relative">
               <Input
                 id="voltage"
-                type="number"
-                value={voltage}
                 onChange={(e) => setVoltage(e.target.value)}
                 placeholder="e.g. 12"
+                type="number"
+                value={voltage}
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-muted-foreground pointer-events-none">V</span>
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-muted-foreground pointer-events-none">
+                V
+              </span>
             </div>
           </div>
         </div>
@@ -68,15 +80,23 @@ export function DcAmpCalculator() {
         {/* Result Display */}
         <div className="relative overflow-hidden bg-primary rounded-2xl p-8 text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-[1.01]">
           <div className="relative z-10 flex flex-col items-center justify-center">
-            <p className="text-sm font-medium opacity-80 mb-2">Calculated Current (Amps)</p>
+            <p className="text-sm font-medium opacity-80 mb-2">
+              Calculated Current (Amps)
+            </p>
             <div className="flex items-baseline gap-2">
               <span className="text-5xl font-black tracking-tight">
-                {resultAmps.toLocaleString(undefined, { maximumFractionDigits: 3 })}
+                {resultAmps.toLocaleString(undefined, {
+                  maximumFractionDigits: 3,
+                })}
               </span>
-              <span className="text-2xl font-bold opacity-80 uppercase">Amps</span>
+              <span className="text-2xl font-bold opacity-80 uppercase">
+                Amps
+              </span>
             </div>
             <div className="mt-6 px-4 py-1.5 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
-              <code className="text-xs font-mono">Formula: I(A) = P(W) / V(V)</code>
+              <code className="text-xs font-mono">
+                Formula: I(A) = P(W) / V(V)
+              </code>
             </div>
           </div>
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 size-48 bg-white/5 rounded-full" />
