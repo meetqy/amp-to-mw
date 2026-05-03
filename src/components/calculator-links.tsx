@@ -12,6 +12,8 @@ const NAV_ITEMS = [
   { label: "AC 3φ (L-L)", path: "/ac-three-ll" },
   { label: "AC 3φ (L-N)", path: "/ac-three-ln" },
   { label: "kV to MW", path: "/kv-to-mw" },
+  { label: "MW to Amps", path: "/mw-to-amps" },
+  { label: "DC to AC", path: "/dc-to-ac" },
 ];
 
 export function CalculatorLinks() {
@@ -26,9 +28,7 @@ export function CalculatorLinks() {
             <Link
               className={cn(
                 "inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all",
-                isActive
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground",
+                isActive ? "bg-primary text-primary-foreground shadow-sm" : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground",
               )}
               href={item.path}
               key={item.path}

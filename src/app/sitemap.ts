@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ac-three-ll",
     "/ac-three-ln",
     "/kv-to-mw",
+    "/mw-to-amps",
+    "/dc-to-ac",
   ];
 
   return routes.map((route) => ({
